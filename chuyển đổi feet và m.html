@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>nhập vào
+<input type="text" id="myInput"/>
+<select id="value1">
+    <option value="FEET">FEET</option>
+    <option value="MET">MET</option>
+</select>
+<select id="value2">
+    <option value="FEET">FEET</option>
+    <option value="MET">MET</option>
+</select>
+<button type="button" onclick="check()">ok</button>
+<p id="view"></p>
+<script>
+function check() {
+    let valueInput = parseFloat(document.getElementById("myInput").value);
+    let valu1 =  document.getElementById("value1").value;
+    let valu2 =  document.getElementById("value2").value;
+    let kq;
+    if (valu1 === "FEET" && valu2 === "MET"){
+        kq = valueInput*0.305;
+        document.getElementById("view").innerHTML = "kết qủa là " + kq;
+    }else if((valu1 === "MET" && valu2 === "FEET")){
+        kq = valueInput*3.279;
+        document.getElementById("view").innerHTML = "kết qủa là " + kq;
+    }else{
+        kq = valueInput;
+        document.getElementById("view").innerHTML = "kết qủa là " + kq;
+    }
+}
+</script>
+</body>
+</html>
